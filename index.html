@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ಸಂಕಥನ | ಸೃಜನಶೀಲ ಹೊಸಪ್ರಯೋಗಗಳಿಗೆ. ವರ್ತಮಾನದ ತಲ್ಲಣಗಳ ಅಭಿವ್ಯಕ್ತಿಗೆ</title>
+<meta name="description" content="ಸಂಕಥನ — ಗ್ರಾಮೀಣ ಸೃಜನಶೀಲ ಯುವ ಸಮುದಾಯ. ಪುಸ್ತಕ, ಪತ್ರಿಕೆ, ಸಂವಾದ, ಪರಿಸರ.">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;800&family=Noto+Serif+Kannada:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* palette sampled from the sankathana.com logo + site accents */
+  --teal:#67d1c3; --mint:#95ddc5; --cream:#fef9cf; --ink:#0b2b2e;
+  --blue:#006799; --sky:#2ea3f2; --bg:#fbfdf8; --card:#fff; --muted:#4a6366;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b2b2e;--card:#12393d;--ink:#fef9cf;--muted:#b9d3cf;--blue:#7fd0f5}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.8 "Noto Sans Kannada",system-ui,sans-serif}
+a{color:var(--blue)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:"Noto Serif Kannada",serif;line-height:1.3;margin:0 0 .5em}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid color-mix(in srgb,var(--teal) 50%,transparent)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;font:800 1.3rem "Noto Serif Kannada",serif;color:var(--ink);text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:50%}
+nav{display:flex;gap:2px;overflow-x:auto}
+nav a{padding:8px 12px;border-radius:99px;text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}
+nav a:hover,nav a:focus-visible{background:var(--mint);color:#0b2b2e}
+@media(max-width:560px){.brand span,nav a[href="#home"]{display:none}nav{gap:0}nav a{padding:8px 5px;font-size:.88rem}}
+.hero{background:linear-gradient(160deg,var(--teal) 0%,var(--mint) 40%,var(--cream) 100%);color:#0b2b2e;padding:64px 0 72px}
+.hero .wrap{display:grid;gap:32px;align-items:center}
+@media(min-width:760px){.hero .wrap{grid-template-columns:1.3fr 1fr}}
+.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);font-weight:800}
+.hero p{font-size:1.15rem;max-width:34em}
+.hero img{width:100%;max-width:340px;border-radius:24px;justify-self:center;box-shadow:0 12px 40px rgba(11,43,46,.25)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-block;padding:10px 22px;border-radius:99px;font-weight:600;text-decoration:none;background:#0b2b2e;color:#fef9cf}
+.btn.alt{background:transparent;color:#0b2b2e;border:2px solid #0b2b2e}
+section{padding:56px 0}
+section>.wrap>h2{font-size:clamp(1.6rem,4vw,2.2rem);border-left:6px solid var(--teal);padding-left:14px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border-radius:16px;padding:22px;border:1px solid color-mix(in srgb,var(--teal) 45%,transparent)}
+.card h3{font-size:1.15rem;color:var(--blue)}
+.card p{margin:0;color:var(--muted)}
+.band{background:var(--cream);color:#0b2b2e}
+@media(prefers-color-scheme:dark){.band{background:#12393d;color:var(--ink)}}
+.split{display:grid;gap:28px;align-items:center}
+@media(min-width:760px){.split{grid-template-columns:1fr 1fr}}
+.split img{width:100%;border-radius:20px;max-height:340px;object-fit:cover}
+.issues{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin:20px 0}
+.issues div{background:var(--card);border-radius:12px;padding:12px 14px;border:1px solid color-mix(in srgb,var(--teal) 45%,transparent)}
+.issues b{display:block;font-family:"Noto Serif Kannada",serif}
+.issues span{color:var(--muted);font-size:.9rem}
+.book{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.book img{width:140px;border-radius:10px}
+footer{background:#0b2b2e;color:#fef9cf;padding:36px 0;font-size:.95rem}
+footer a{color:var(--mint)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}
+
+/* no-page-scroll app shell: header + one panel at a time */
+html,body{height:100%;overflow:hidden}
+body{display:flex;flex-direction:column}
+main{flex:1;min-height:0;position:relative}
+.panel{display:none;position:absolute;inset:0;overflow-y:auto;padding:28px 0 40px}
+.panel:target,main:not(:has(.panel:target)) #home{display:block}
+.panel.band{background:var(--cream)}
+@media(prefers-color-scheme:dark){.panel.band{background:#12393d}}
+.panel:focus,.panel:target{outline:none}
+.bk img{max-height:24vh}
+.panel h2{font-size:clamp(1.4rem,3.5vw,2rem);border-left:6px solid var(--teal);padding-left:14px}
+nav a[aria-current]{background:var(--mint);color:#0b2b2e}
+header{position:static;flex:none}
+footer{flex:none;padding:10px 0;font-size:.85rem}
+footer .wrap{gap:8px}
+#home{background:linear-gradient(160deg,var(--teal),var(--mint) 45%,var(--cream));color:#0b2b2e;padding:0}
+#home .wrap{height:100%;display:grid;gap:20px;align-items:center;align-content:center}
+@media(min-width:760px){#home .wrap{grid-template-columns:1.3fr 1fr}}
+#home img{width:100%;max-width:min(320px,38vh);border-radius:24px;justify-self:center;box-shadow:0 12px 40px rgba(11,43,46,.25)}
+#home h1{font-size:clamp(2.2rem,8vw,4rem);font-weight:800}
+.shelf{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin:18px 0}
+.bk{flex:0 0 190px;scroll-snap-align:start;background:var(--card);border-radius:14px;padding:12px;border:1px solid color-mix(in srgb,var(--teal) 45%,transparent);display:flex;flex-direction:column;gap:8px}
+.bk img{width:100%;aspect-ratio:3/4;object-fit:contain;border-radius:8px;background:var(--mint)}
+.bk h3{font-size:1rem;margin:0}.bk small{color:var(--muted)}
+.bk .buy{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.bk .buy a{font-size:.85rem;padding:5px 12px;border-radius:99px;background:#0b2b2e;color:#fef9cf;text-decoration:none;font-weight:600}
+
+/* home as brand page */
+#home{background:radial-gradient(120% 90% at 85% 10%,var(--cream) 0%,transparent 55%),linear-gradient(165deg,var(--teal),var(--mint) 60%,var(--cream))}
+#home .wrap{height:auto;min-height:100%;display:grid;gap:22px;align-items:center;align-content:center;padding-block:20px;grid-template-columns:1fr}
+@media(min-width:900px){#home .wrap{grid-template-columns:1.15fr 1fr;gap:48px}}
+.eyebrow{margin:0 0 12px;font-weight:600;letter-spacing:.04em;font-size:.95rem;color:#0b4a4d}
+#home h1{margin:0;font-size:clamp(3rem,11vw,6.5rem);line-height:1.05;letter-spacing:-.01em}
+.tag{margin:.3em 0 0;font:700 clamp(1.1rem,2.4vw,1.45rem)/1.5 "Noto Serif Kannada",serif}
+.lede{margin:.8em 0 0;max-width:36em;font-size:1rem;line-height:1.75}
+.facts{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:10px 28px}
+.facts li{display:flex;flex-direction:column}
+.facts b{font:800 1.5rem/1.1 "Noto Serif Kannada",serif}
+.facts span{font-size:.85rem;color:#0b4a4d}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.door{display:flex;flex-direction:column;gap:2px;padding:16px 16px 14px;border-radius:18px;background:rgba(255,255,255,.72);color:#0b2b2e;text-decoration:none;border:1px solid rgba(11,43,46,.12);transition:transform .15s,background .15s}
+.door:hover,.door:focus-visible{transform:translateY(-3px);background:#fff}
+.door small{font:800 .8rem "Noto Serif Kannada",serif;color:#006799}
+.door b{font:800 1.25rem/1.3 "Noto Serif Kannada",serif}
+.door span{font-size:.85rem;line-height:1.5;color:#35585b}
+@media(max-width:560px){.facts{display:none}.lede{font-size:.92rem;line-height:1.65}.door{padding:12px}.door span{display:none}}
+@media(prefers-reduced-motion:reduce){.door{transition:none}}
+/* pager */
+footer{padding:0}
+.pager{max-width:1040px;margin:0 auto;padding:6px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pager a{color:#fef9cf;text-decoration:none;font-weight:600;padding:8px 6px;white-space:nowrap}
+.pager a:hover,.pager a:focus-visible{color:var(--mint)}
+.pager a[hidden]{visibility:hidden;display:block!important}
+.dots{display:flex;gap:8px}.dots i{width:8px;height:8px;border-radius:50%;background:#fef9cf55}.dots i.on{background:var(--teal);transform:scale(1.4)}
+.copy{margin:28px 0 0;font-size:.85rem;color:var(--muted)}
+.panel .btns{margin-top:18px}
+.js .panel{display:none!important}.js .panel.on{display:block!important}
+#books{padding-top:18px}#books p{font-size:.95rem;line-height:1.6;margin:0 0 10px}
+#books .shelf{margin:10px 0 0}
+.bk h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bk small{line-height:1.4}
+.covers{margin:14px 0 6px}.covers img{flex:0 0 auto;height:min(24vh,200px);width:auto;border-radius:10px;scroll-snap-align:start;box-shadow:0 4px 14px rgba(11,43,46,.18)}
+#magazine .issues{margin:10px 0}
+#magazine{padding-top:18px}#magazine p{font-size:.95rem;line-height:1.6;margin:0 0 8px}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px 12px;margin:12px 0 0}
+.tiles.sq{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:5px;border-radius:10px}
+.tile img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px;background:var(--mint);box-shadow:0 3px 10px rgba(11,43,46,.2);transition:transform .15s}
+.sq .tile img{aspect-ratio:1/1}
+.tile:hover img{transform:translateY(-3px)}
+.tile:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.tile span{font-size:.8rem;line-height:1.35;font-weight:600;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+dialog{border:0;border-radius:20px;padding:0;background:var(--card);color:var(--ink);width:min(92vw,680px);max-height:88vh;overflow:auto}
+dialog::backdrop{background:rgba(11,43,46,.6)}
+#sheet-body{display:grid;gap:18px;padding:22px}
+@media(min-width:600px){#sheet-body{grid-template-columns:minmax(0,260px) 1fr;align-items:start}}
+#sheet-body img{width:100%;border-radius:12px;max-height:60vh;object-fit:contain;background:var(--mint)}
+#sheet-body h3{font-size:1.3rem}#sheet-body p{margin:0 0 6px}#sheet-body .m{color:var(--muted)}
+#sheet-body .btn{margin:10px 8px 0 0}
+#sheet-x{all:unset;cursor:pointer;position:absolute;top:10px;right:14px;font-size:1.2rem;padding:6px 10px;border-radius:99px;background:var(--bg);z-index:1}
+#sheet-x:focus-visible{outline:3px solid var(--blue)}
+@media(prefers-reduced-motion:reduce){.tile img{transition:none}}
+@media(min-width:900px){
+ #magazine .wrap{display:grid;grid-template-columns:1.1fr 1fr;column-gap:36px;align-content:start}
+ #magazine .wrap>h2{grid-column:1/-1}
+ #magazine .wrap>div:first-of-type{grid-column:1;grid-row:2/5}
+ #magazine .wrap>#issues,#magazine .wrap>.issues,#magazine .wrap>.btn{grid-column:2}
+ #magazine .wrap>.btn{justify-self:start}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.className="js"</script>
+<header><div class="wrap"><a class="brand" href="#home"><img src="img/logo.jpg" alt="ಸಂಕಥನ"><span>ಸಂಕಥನ</span></a>
+    <nav aria-label="ಮುಖ್ಯ">
+      <a href="#home">ಮುಖಪುಟ</a><a href="#about">ನಾವು</a><a href="#programs">ಕಾರ್ಯಕ್ರಮ</a><a href="#magazine">ಪತ್ರಿಕೆ</a><a href="#books">ಪುಸ್ತಕ</a><a href="#contact">ಸಂಪರ್ಕ</a>
+    </nav></div></header>
+<main id="top">
+<section id="home" class="panel"><div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">ಪ್ರಕಾಶನ · ಸಮುದಾಯ · ಸಾಹಿತ್ಯ ಪತ್ರಿಕೆ</p>
+      <h1>ಸಂಕಥನ</h1>
+      <p class="tag">ಸೃಜನಶೀಲ ಹೊಸಪ್ರಯೋಗಗಳಿಗೆ. ವರ್ತಮಾನದ ತಲ್ಲಣಗಳ ಅಭಿವ್ಯಕ್ತಿಗೆ.</p>
+      <p class="lede">ವಾಣಿಜ್ಯ, ವಿಜ್ಞಾನ, ತಂತ್ರಜ್ಞಾನಗಳಲ್ಲಿ ಕಲಿಯುತ್ತಿರುವ, ದುಡಿಯುತ್ತಿರುವ ಗ್ರಾಮೀಣ ಸೃಜನಶೀಲ ಯುವ ಸಮುದಾಯ. ಕಲೆ, ಸಾಹಿತ್ಯ, ಸಂಗೀತ, ಸಂಸ್ಕೃತಿ, ಪರಿಸರ, ಕೃಷಿ ಮತ್ತು ಗಾಂಧಿ – ಅಂಬೇಡ್ಕರ್ ಚಿಂತನೆಯ ಸುತ್ತ ಪುಸ್ತಕ, ಪತ್ರಿಕೆ ಮತ್ತು ಸಂವಾದ.</p>
+      <ul class="facts">
+        <li><b>೨೦೦೫</b><span>ಮಂಡ್ಯದಲ್ಲಿ ಶುರು</span></li>
+        <li><b>೨೦೧೫</b><span>ಬೆಂಗಳೂರಿನಲ್ಲಿ ‘ಸಂಕಥನ’</span></li>
+        <li><b>೫ ರೂ.</b><span>ಮಕ್ಕಳ ಪುಸ್ತಕ ಮಾಲೆ</span></li>
+      </ul>
+    </div>
+    <div class="doors" aria-label="ಇಲ್ಲಿಂದ ಮುಂದೆ">
+      <a class="door" href="#about"><small>೧</small><b>ನಾವು</b><span>ನಮ್ಮ ಕಥೆ, ನಮ್ಮ ಸಂಚಾಲಕರು</span></a>
+      <a class="door" href="#programs"><small>೨</small><b>ಕಾರ್ಯಕ್ರಮ</b><span>ಪ್ರಣಾಳಿಕೆ ೨೦೨೧</span></a>
+      <a class="door" href="#magazine"><small>೩</small><b>ಪತ್ರಿಕೆ</b><span>ಸಾಹಿತ್ಯ ತ್ರೈಮಾಸಿಕ</span></a>
+      <a class="door" href="#books"><small>೪</small><b>ಪುಸ್ತಕ</b><span>ಕೃತಿಗಳು ಮತ್ತು ಕೆಟಲಾಗ್</span></a>
+    </div>
+  </div></section>
+<section id="about" class="panel"><div class="wrap">
+    <h2>ನಮ್ಮ ಬಗ್ಗೆ</h2>
+    <div class="split">
+      <div>
+        <p>ಸಂಕಥನವು ವಾಣಿಜ್ಯ, ವಿಜ್ಞಾನ, ತಂತ್ರಜ್ಞಾನಗಳಲ್ಲಿ ಕಲಿಯುತ್ತಿರುವ, ದುಡಿಯುತ್ತಿರುವ ಗ್ರಾಮೀಣ ಸೃಜನಶೀಲ ಯುವ ಸಮುದಾಯ. ಕಲೆ, ಸಾಹಿತ್ಯ, ಸಂಗೀತ, ಸಂಸ್ಕೃತಿ, ಪರಿಸರ, ಕೃಷಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ, ಸಂವಾದ, ಕೃತಿ ಪ್ರಕಟಣೆ – ಪ್ರಸರಣ, ವಿಶೇಷವಾಗಿ ಗಾಂಧಿ – ಅಂಬೇಡ್ಕರ್ ಚಿಂತನೆ.. ಕಳೆದುಹೋಗುತ್ತಿರುವ ನೆಲಮೂಲ ಸಂಸ್ಕೃತಿಯ ಕುರಿತು ಅರಿವು, ಅಧ್ಯಯನ ಇದರ ಮೂಲ ಭೂಮಿಕೆ.</p>
+        <p>೨೦೦೫ ರಲ್ಲಿ ಮಂಡ್ಯದಲ್ಲಿ ‘ಸೃಜನ’ ಹೆಸರಿನಲ್ಲಿ ಶುರುವಾದ ಸಮೂಹವು ‘ಅನೇಕ’ವಾಗಿ ಕಡೆಗೆ ೨೦೧೫ರಲ್ಲಿ ಬೆಂಗಳೂರಿನಲ್ಲಿ ‘ಸಂಕಥನ’ ವಾಯಿತು. ಇವಾಗ ಸಂಕಥನವು ಒಂದೆರಡು ಊರಿನ ಜನರ ಸಮೂಹವಾಗಿಲ್ಲ. ಅಂತರ್ಜಾಲ ತಾಣದಲ್ಲಿ ಹಲವು ಊರುಗಳ, ಹಲವು ಜನಗಳ, ಹಲವು ಓದುಗಳ ಸಮೂಹವಾಗಿ ಬೆಳೆದಿದೆ.</p>
+        <p>ಯುವ ಕವಿ ಮತ್ತು ಬರಹಗಾರ ರಾಜೇಂದ್ರ ಪ್ರಸಾದ್ ಕೆ, ಮಂಡ್ಯ ಇದರ ಸಂಚಾಲಕರಾಗಿದ್ದಾರೆ.</p>
+      </div>
+      <img src="img/leaves.jpg" alt="" loading="lazy">
+    </div>
+  </div></section>
+<section id="programs" class="panel band"><div class="wrap">
+    <h2>ಸಂಕಥನ ಪ್ರಣಾಳಿಕೆ ೨೦೨೧</h2>
+    <div class="grid">
+      <article class="card"><h3>ಕಂದರಿಗೆ ಕನ್ನಡ ; ಐದು ರುಪಾಯಿ ಪುಸ್ತಕ ಮಾಲೆ</h3><p>ನರ್ಸರಿ ಇಂದ ೮ ನೇ ತರಗತಿ ವರೆಗಿನ ಮಕ್ಕಳನ್ನು ಗಮನದಲ್ಲಿ ಇಟ್ಟುಕೊಂಡು ಇತಿಹಾಸ, ವಿಜ್ಞಾನ, ಗಣಿತ, ಸಾಹಿತ್ಯ, ವ್ಯಕ್ತಿಚಿತ್ರ, ಪಾಕ ಮತ್ತು ತತ್ತ್ವಶಾಸ್ತ್ರ ಇನ್ನಿತರ ವಿಚಾರ ಕುರಿತಂತೆ ಪುಟ್ಟ ಪುಸ್ತಕಗಳ ಪ್ರಕಟನೆ ಮತ್ತು ಕೇವಲ ಐದು ರೂಪಾಯಿಗೆ ಮಾರಾಟ.</p></article>
+      <article class="card"><h3>ವಿಚಾರ ಕನ್ನಡ : ಸೃಜನೇತರ ಸಾಹಿತ್ಯದ ಪ್ರಕಟಣೆಗೆ ಹೆಚ್ಚು ಒತ್ತು</h3><p>ಕಾವ್ಯ, ಕಥನಗಳಿಗಿಂತ ಹೆಚ್ಚು ಸೃಜನೇತರ ಬರವಣಿಗೆಗೆ ಒತ್ತು ಕೊಟ್ಟು ವೈವಿಧ್ಯಮಯ ಬರಹಗಳ ಪುಸ್ತಕಗಳನ್ನು ಪ್ರಕಟಿಸುವುದು ಈ ವರ್ಷದ ಉದ್ದೇಶವಾಗಿದೆ. 10+ ವಿಶೇಷ ಪುಸ್ತಕಗಳು ಈ ಸರಣಿಯಲ್ಲಿ ಸಿದ್ದವಾಗುತ್ತಿವೆ. ಕನ್ನಡ ನಾಡು – ನುಡಿಯ ಚಿಂತನೆ, ಶಾಸನಗಳ ಅಧ್ಯಯನ, ಸ್ತ್ರೀವಾದಿ ಅಧ್ಯಯನ, ಕೃಷಿ ವಿಚಾರ ಸರಣಿಯ ಪುಸ್ತಕಗಳು.</p></article>
+      <article class="card"><h3>ಸಂವಾದ ಸಂಕಥನ</h3><p>ಕಲೆ, ಸಾಹಿತ್ಯ, ಸಂಸ್ಕೃತಿ, ಸಂಗೀತ, ಪರಿಸರ, ರಾಜಕೀಯ ಪ್ರಜ್ಞೆ ಸೇರಿದಂತೆ ಹಲವು ವಿಷಯಗಳ ಮೇಲೆ ಕೇಂದ್ರೀಕೃತವಾದ ಹಿರಿಯರು-ಕಿರಿಯರು ಒಂದೆಡೆ ಸೇರಿ ವಿಚಾರ ವಿನಿಮಯ ಮಾಡಿಕೊಳ್ಳುವ, ಚರ್ಚೆ ನಡೆಸುವ ಒಂದು ಅನೌಪಚಾರಿಕ ಕಾರ್ಯಕ್ರಮವಾಗಿದೆ. ೨೦೧೯ ರಲ್ಲಿ ೬ ಮತ್ತು ೨೦೨೦ ರಲ್ಲಿ ೧ – ಕಾರ್ಯಕ್ರಮಗಳು ನಡೆದಿವೆ. ಇಲ್ಲಿ ಪುಸ್ತಕ ಮಾರಾಟ – ಕಲಾ ಪ್ರದರ್ಶನಗಳು ಕೂಡ ನಡೆಯಲಿವೆ.</p></article>
+      <article class="card"><h3>ನವಯಾನ : ಅಂಬೇಡ್ಕರ್ ಚಿಂತನೆಗಳ ಅಭಿಯಾನ</h3><p>ಈ ದೆಸೆಯಲ್ಲಿ ಸಂವಾದ, ಕಿರು ಸಂದರ್ಶನಗಳು, ಸಾಕ್ಷ್ಯ ಚಿತ್ರ ಪ್ರದರ್ಶನಗಳು ನಡೆಯಲಿವೆ. ಸಂವಿಧಾನ, ಸಂಸತ್ತು, ಸ್ವಾಯತ್ತತೆ ಕುರಿತಂತೆ ಸಣ್ಣ ಹೊತ್ತಗೆಗಳು ಪ್ರಕಟನೆ.</p></article>
+      <article class="card"><h3>ಸ್ಮಾರಕ ಉಪನ್ಯಾಸ ಮಾಲೆ</h3><p>ಡಿ.ಆರ್ ನಾಗರಾಜರ ನೆನಪಿನ ಉಪನ್ಯಾಸ<br>ಶಂಬಾ ನೆನಪಿನ ಉಪನ್ಯಾಸ (ಕನ್ನಡ ನುಡಿ ಕೇಂದ್ರಿತ)</p></article>
+      <article class="card"><h3>ಅಧ್ಯಾತ್ಮ ಪ್ರಜ್ಞೆ ಮತ್ತು ವೈಚಾರಿಕತೆ</h3><p>ಅಧ್ಯಾತ್ಮ ಪ್ರಜ್ಞೆ ಮತ್ತು ವೈಚಾರಿಕತೆಯನ್ನು ಮುಖ್ಯವಾಗಿರಿಸಿಕೊಂಡು ಪರಂಪರೆಯ ಜೊತೆಗೆ ಮುಖಾಮುಖಿಯಾಗುವ ಹಲವು ಭಿನ್ನ ಮಾರ್ಗ-ಪಂಥಗಳ ಜೊತೆಗೆ ಒಡನಾಡುವ ಅವಕಾಶವನ್ನು ಶಿಬಿರಗಳನ್ನು ಏರ್ಪಡಿಸುವ ಮೂಲಕ ಸಂಕಥನದ ಗೆಳೆಯರಿಗೆ ಒದಗಿಸಲಿದೆ.</p></article>
+      <article class="card"><h3>ಪರಿಸರವು ನಮ್ಮ ಮುಖ್ಯ ಕಾಳಜಿಗಳಲ್ಲೊಂದು</h3><p>ಹವಾಮಾನ ಬದಲಾವಣೆ, ಮಾಲಿನ್ಯ, ನೀರಿನ ಸದ್ಬಳಕೆ, ನೈಸರ್ಗಿಕ ಕೃಷಿ, ಹಲವು ಉಪಕಸುಬುಗಳ ಪರಿಚಯ, ಕುರಿತಂತೆಯು ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಏರ್ಪಡಿಸುವುದಿದೆ. ಹಾಗೆಯೆ ಇದೇ ನೆವದಲ್ಲಿ ಐತಿಹಾಸಿಕ ಮತ್ತು ಪ್ರೇಕ್ಷಣೀಯ ಸ್ಥಳಗಳಿಗೆ ಚಾರಣಗಳನ್ನು ಕೂಡ ನಡೆಸಲಿದೆ.</p></article>
+    </div>
+  </div></section>
+<section id="magazine" class="panel"><div class="wrap">
+    <h2>ಪತ್ರಿಕೆ</h2>
+    <div>
+        <p>ಮುದ್ರಣ ಮಾಧ್ಯಮವು ಮನುಷ್ಯ ಸುಲಭವಾದ ಕಾಲದಲ್ಲೇ ಆಯಾ ಭಾಷೆಗಳಲ್ಲಿ ಸಾಹಿತ್ಯಿಕ ಪತ್ರಿಕೆಗಳು ಶುರುವಾದುವು. ಕನ್ನಡದಲ್ಲಿ ಸಾಹಿತ್ಯಿಕ ಪತ್ರಿಕೆಗಳ ದೀರ್ಘ ಇತಿಹಾಸವೇ ಇದೆ. ಆದರೆ ಡಿಜಿಟಲ್ ಮಾಧ್ಯಮವು ಮುನ್ನೆಲೆಗೆ ಬರಲು ತೊಡಗಿದಂತೆ ಮುದ್ರಣ ಮಾಧ್ಯಮದಲ್ಲಿದ್ದ ಸಾಹಿತ್ಯಿಕ ಪತ್ರಿಕೆಗಳು ಬೇರೆ ಬೇರೆ ಕಾರಣಗಳಿಗೆ ನಿಂತುಹೋಗ ತೊಡಗಿದವು.</p>
+        <p>ಹಾಗಿದ್ದಾಗ ಅಂತರ್ಜಾಲ ತಾಣಗಳಲ್ಲಿ ಪರಸ್ಪರ ಪರಿಚಯವಾಗಿದ್ದ ಗೆಳೆಯ, ಹಿರಿಯ ನೆರವಿನಿಂದ ರಾಜೇಂದ್ರ ಪ್ರಸಾದ್ ೨೦೧೫ ರ ಮೇ 17 ರಂದು ಸಂಕಥನ ಪತ್ರಿಕೆಯ ಮೊದಲ ಸಂಚಿಕೆ ಹೊರತಂದರು. ಅದಾದ ಮೇಲೆ ಕಾಲವ್ಯತ್ಯಯದಲ್ಲಿ ಒಟ್ಟು 8 ಸಂಚಿಕೆಗಳು ಮಾತ್ರ ಪ್ರಕಟವಾದುವು. ಆರ್ಥಿಕ ಅಡಚಣೆ, ನಿರ್ವಹಣೆ ಇತ್ಯಾದಿಗಳ ಕಾರಣದಿಂದ ೨೦೧೭ ಕ್ಕೆಲ್ಲ ಪತ್ರಿಕೆ ಪ್ರಸರಣ ನಿಂತಿತು.</p>
+        <p>೨೦೨೦ ರ ಮಧ್ಯ ಭಾಗದಲ್ಲಿ ಸಂಕಥನ ಸಾಹಿತ್ಯ ಪತ್ರಿಕೆಯನ್ನು ಉಳಿಸಿರುವ ಬಾಕಿ ಸಂಚಿಕೆಗಳ ಸಮೇತ e-ಸಂಚಿಕೆಗಳಾಗಿ ರೂಪಿಸುವ ಕೆಲಸಕ್ಕೆ ಕೈ ಹಾಕಿದೆವು. ಬರೋಬ್ಬರಿ 20 ಸಂಚಿಕೆಗಳ ಕೆಲಸ! ಹೊಸ ಸಂಚಿಕೆಗಳು ಸಿದ್ದವಾದಂತೆಲ್ಲಾ ನಮ್ಮ ವೆಬ್ ಸೈಟಿನ ಕಪಾಟಿಗೆ ಸೇರಲಿವೆ.</p>
+      </div>
+    <div class="tiles sq" id="issues" aria-label="ಸಂಕಥನ ಪತ್ರಿಕೆಯ ಮುಖಪುಟಗಳು"></div>
+    <div class="issues">
+      <div><b>ಸಾಹಿತ್ಯ ಪತ್ರಿಕೆ</b><span>೨೦೧೫ ರ ಪ್ರಾಯೋಗಿಕ ಸಂಚಿಕೆಗಳು</span></div>
+      <div><b>೨೦೨೬</b><span>ಸಾಹಿತ್ಯ ಪತ್ರಿಕೆ</span></div>
+    </div>
+    <a class="btn" href="https://sankathana.com/magazine/">ಸಂಚಿಕೆಗಳನ್ನು ಪಡೆಯಿರಿ</a>
+  </div></section>
+<section id="books" class="panel band"><div class="wrap"><p>‘ಅನೇಕ’ ಎಂಬ ಹೆಸರಿನಲ್ಲಿ ಶುರುವಾದ ನಮ್ಮ ಸಾಹಿತ್ಯ ಬಳಗವು ಇದುವರೆಗೂ ಹಲವು ಕೃತಿಗಳನ್ನು ಪ್ರಕಟಿಸಿದೆ. ‘ಕಾವ್ಯ’ವು ನಮ್ಮ ಆದ್ಯತೆಯ ಪ್ರಕಾರ. ವರ್ತಮಾನದ ಪುಸ್ತಕ ಪ್ರಕಾಶನ ಸಂಸ್ಥೆಗಳು ‘ಕಾವ್ಯ’ವನ್ನು ನಿರ್ಲಕ್ಷಿಸುವುದು ಸಾಮಾನ್ಯ ಸಂಗತಿಯಾಗಿಬಿಟ್ಟಿದೆ. ಆದರೆ ಅನೇಕವು ಮೊದಲಿನಿಂದಲೂ ಕಾವ್ಯಕ್ಕೆ ತನ್ನ ವಿಶೇಷ ಆದ್ಯತೆ ನೀಡಿದೆ. ಅದೀಗ ‘ಸಂಕಥನ’ ಮತ್ತೊಂದು ಬಗೆಯ ಪ್ರಕಟಣಾ ವಿಭಾಗವಾಗಿ ವಿಲೀನಗೊಂಡಿದೆ. ಕಾವ್ಯದ ಜೊತೆಗೆ ವಿಜ್ಞಾನ, ಇತಿಹಾಸ, ಕೃಷಿ ಮುಂತಾದ ವಿಷಯಗಳ ಉಪಯುಕ್ತ ಪುಸ್ತಕಗಳನ್ನು ಪ್ರಕಟಿಸುತ್ತಿದೆ.</p>
+    <a class="btn" href="https://wa.me/c/919019529494" rel="noopener">ಕೆಟಲಾಗ್ (WhatsApp)</a>
+    <div class="tiles" id="shelf" aria-label="ಪುಸ್ತಕಗಳು"></div></div></section>
+<section id="contact" class="panel"><div class="wrap">
+    <h2>ಸಂಪರ್ಕ</h2>
+    <div class="grid">
+      <div class="card"><h3>ವಿಳಾಸ</h3><p>ಸಂಕಥನ<br>#72, ಭೂಮಿಗೀತ<br>6 ನೇ ತಿರುವು, ಉದಯಗಿರಿ<br>ಮಂಡ್ಯ – 571401</p></div>
+      <div class="card"><h3>ಇಮೇಲ್</h3><p><a href="mailto:connectsankathana@gmail.com">connectsankathana@gmail.com</a></p></div>
+      <div class="card"><h3>ಕರೆ ಮಾಡಿ</h3><p><a href="tel:+919019529494">9019529494</a><br>ಸೋಮ–ಶುಕ್ರ: 6am – 5pm<br>ವಾರಾಂತ್ಯ: 7am – 4pm</p></div>
+      <div class="card"><h3>ಸಂಕಥನ</h3><p><a href="https://www.facebook.com/sankathan" rel="noopener">Facebook</a><br><a href="https://www.instagram.com/sankathana_" rel="noopener">Instagram</a></p></div>
+    </div>
+  </div></section>
+</main>
+<dialog id="sheet"><button id="sheet-x" aria-label="ಮುಚ್ಚಿ">✕</button><div id="sheet-body"></div></dialog>
+<footer><div class="pager">
+  <a id="prev" href="#home" aria-label="ಹಿಂದೆ">← <span></span></a>
+  <div class="dots" id="dots" aria-hidden="true"></div>
+  <a id="next" href="#about" aria-label="ಮುಂದೆ"><span></span> →</a>
+</div></footer>
+<script>
+// To add a book: append an entry. buy = one link per portal that sells it.
+const BOOKS=[
+  {title:"ಹೂ ಬುಟ್ಟಿ",by:"ಕೆ ಎಸ್ ನರಸಿಂಹ ಸ್ವಾಮಿಯವರ ಕಾವ್ಯ ವಿಮರ್ಶೆ",img:"img/book.jpg",
+   buy:[{label:"WhatsApp ಕೆಟಲಾಗ್",url:"https://wa.me/c/919019529494"}]},
+  {title:"ಮಧುಬಾಲಾ - ಮೀನಾಕುಮಾರಿ: ಬದುಕಿನ ಕೆಲವು ಪುಟಗಳು",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/8nR6EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=8nR6EAAAQBAJ"}]},
+  {title:"ಸುರಯ್ಯಾ ಟೀಚರ್ ಮತ್ತು ಸೀತೆ ಆಟ",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/8qh4EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=8qh4EAAAQBAJ"}]},
+  {title:"ನೈಲ್ ನದಿಯ ನಾಡಿನಲ್ಲಿ",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/Aq54EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=Aq54EAAAQBAJ"}]},
+  {title:"ಅಮೇರಿಕಾದಲ್ಲಿ ಅಲೂರು: ಪ್ರವಾಸ ಕಥನ",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/UKh4EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=UKh4EAAAQBAJ"}]},
+  {title:"SANKATHANA 6",by:"Rajendra Prasad",fmt:"ಇ-ಪುಸ್ತಕ",img:"img/books/XxoeEAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=XxoeEAAAQBAJ"}]},
+  {title:"ಮತ್ತೆ ಹೇಳಿದ ಕಥೆಗಳು",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/f296EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=f296EAAAQBAJ"}]},
+  {title:"ಒಂದು ಸುಂದರ ಮನಸ್ಸು ಮತ್ತು ಇತರ ಬರಹಗಳು",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/j296EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=j296EAAAQBAJ"}]},
+  {title:"ಸಾವಿರ ಕಣ್ಣಿನ ನವಿಲು: ಕಥಾಸಂಕಲನ",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/l296EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=l296EAAAQBAJ"}]},
+  {title:"ಟು ಸರ್ ವಿತ್ ಲವ್: ಒಂದು ಭಾವ ಸಂಗ್ರಹ",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/p296EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=p296EAAAQBAJ"}]},
+  {title:"ಗೀತ ಸಂಗೀತ‍",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/p416EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=p416EAAAQBAJ"}]},
+  {title:"ವೆರೊನಿಕಾ: ಪಾಲೋ ಕೊಹೆಲೊನ ಮೂರು ಕಾದಂಬರಿಗಳ ಭಾವ ಸಂಗ್ರಹ",by:"ಚಂದ್ರಶೇಖರ ಆಲೂರು",fmt:"ಇ-ಪುಸ್ತಕ",year:"2022",img:"img/books/r296EAAAQBAJ.jpg",
+   buy:[{label:"Google Play Books",url:"https://play.google.com/store/books/details?id=r296EAAAQBAJ"}]}
+];
+const ISSUES=[1,2,3,4,5,6,7,8].map(n=>({img:`img/mag/${n}.jpg`,title:"ಸಂಕಥನ ಪತ್ರಿಕೆ"}));
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const tile=(k,i,img,cap)=>`<button class="tile" data-k="${k}" data-i="${i}"><img src="${esc(img)}" alt="" loading="lazy">${cap?`<span>${esc(cap)}</span>`:""}</button>`;
+document.getElementById("shelf").innerHTML=BOOKS.map((b,i)=>tile("b",i,b.img,b.title)).join("");
+document.getElementById("issues").innerHTML=ISSUES.map((b,i)=>tile("m",i,b.img,"")).join("");
+const sheet=document.getElementById("sheet"),sb=document.getElementById("sheet-body");
+document.addEventListener("click",e=>{const x=e.target.closest(".tile");if(x){const b=(x.dataset.k==="b"?BOOKS:ISSUES)[+x.dataset.i];
+ sb.innerHTML=`<img src="${esc(b.img)}" alt="${esc(b.title)}"><div><h3>${esc(b.title)}</h3>${b.by?`<p>${esc(b.by)}</p>`:""}${b.fmt?`<p class="m">${esc(b.fmt)}${b.year?" · "+b.year:""}</p>`:""}${(b.buy||[]).map(y=>`<a class="btn" href="${esc(y.url)}" rel="noopener" target="_blank">${esc(y.label)} ↗</a>`).join("")}</div>`;
+ sheet.showModal();return}
+ if(e.target===sheet||e.target.closest("#sheet-x"))sheet.close()});
+const ORDER=["home","about","programs","magazine","books","contact"];
+const LABEL={};document.querySelectorAll("nav a").forEach(a=>LABEL[a.hash.slice(1)]=a.textContent);LABEL.home="ಮುಖಪುಟ";
+const dots=document.getElementById("dots");dots.innerHTML=ORDER.map(()=>"<i></i>").join("");
+function show(id){if(!ORDER.includes(id))id="home";const i=ORDER.indexOf(id);
+ document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.id===id));
+ document.querySelectorAll("nav a").forEach(a=>a.toggleAttribute("aria-current",a.hash==="#"+id));
+ [...dots.children].forEach((d,j)=>d.classList.toggle("on",j===i));
+ for(const [el,j] of [[prev,i-1],[next,i+1]]){el.hidden=!ORDER[j];if(ORDER[j]){el.hash=ORDER[j];el.querySelector("span").textContent=LABEL[ORDER[j]]}}
+ document.getElementById(id).scrollTo(0,0)}
+const cur=()=>ORDER.includes(location.hash.slice(1))?location.hash.slice(1):"home";
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;e.preventDefault();try{history.replaceState(null,"",a.hash)}catch(_){}show(a.hash.slice(1))});
+addEventListener("hashchange",()=>show(cur()));
+const go=d=>{const j=ORDER.indexOf(cur())+d;if(ORDER[j]){try{history.replaceState(null,"","#"+ORDER[j])}catch(_){}show(ORDER[j])}};
+addEventListener("keydown",e=>{if(e.target.closest("input,textarea")||e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==="ArrowRight")go(1);if(e.key==="ArrowLeft")go(-1)});
+let x0=null;addEventListener("touchstart",e=>{x0=e.target.closest(".shelf")?null:e.touches[0].clientX},{passive:true});
+addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>70)go(dx<0?1:-1);x0=null});
+show(cur());
+</script>
+</body>
+</html>
