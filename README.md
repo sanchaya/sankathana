@@ -11,3 +11,9 @@ Static site for Sankathana (publisher, community, literary magazine). Plain HTML
 ## Publish (GitHub Pages)
 
 Settings → Pages → Source: *Deploy from a branch* → `main` / `/ (root)`.
+
+## Adding more magazines and books later
+
+- **New magazine issue / e-magazine:** edit the `NEWISSUE` object (or add similar objects) in `index.html`: title, `by`, `fmt`, cover in `img/mag/`, optional `note` and `list` (contributors), optional `buy` links.
+- **Older covers:** drop `img/mag/N.jpg` and extend the `ISSUES` list.
+- **Books:** append to `BOOKS` with a cover in `img/books/` and one `buy` link per portal.
