@@ -103,7 +103,7 @@ footer .wrap{gap:8px}
 .doors{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .door{display:flex;flex-direction:column;gap:2px;padding:16px 16px 14px;border-radius:18px;background:rgba(255,255,255,.72);color:#0b2b2e;text-decoration:none;border:1px solid rgba(11,43,46,.12);transition:transform .15s,background .15s}
 .door:hover,.door:focus-visible{transform:translateY(-3px);background:#fff}
-.door small{font:800 .8rem "Noto Serif Kannada",serif;color:#006799}
+.door small{display:block;font:800 .8rem "Noto Serif Kannada",serif;color:#006799}
 .door b{font:800 1.25rem/1.3 "Noto Serif Kannada",serif}
 .door span{font-size:.85rem;line-height:1.5;color:#35585b}
 @media(max-width:560px){.facts{display:none}.lede{font-size:.92rem;line-height:1.65}.door{padding:12px}.door span{display:none}}
@@ -166,6 +166,15 @@ dialog::backdrop{background:rgba(11,43,46,.6)}
 #sheet-body h4{margin:12px 0 4px;font-family:"Noto Serif Kannada",serif}
 #sheet-body .m{line-height:1.7}
 @media(min-width:900px){#magazine .wrap>.feature,#magazine .wrap>.sub-h{grid-column:2}}
+
+.door.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:14px;background:#0b2b2e;color:#fef9cf;border-color:#0b2b2e}
+.door.wide:hover,.door.wide:focus-visible{background:#12393d}
+#home .door.wide img{width:64px;max-width:64px;flex:none;border-radius:6px;aspect-ratio:3/4;object-fit:cover;box-shadow:none;justify-self:auto}
+.door.wide small{color:var(--teal)}
+.door.wide div{min-width:0}
+.door.wide p{margin:2px 0 0;font-size:.85rem;color:#d7ece8}
+.door.wide u{text-decoration:none;font-weight:600;font-size:.9rem;color:var(--mint);margin-top:4px;display:inline-block}
+@media(min-width:900px){#home .door.wide img{width:84px;max-width:84px}.door.wide b{font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -180,7 +189,6 @@ dialog::backdrop{background:rgba(11,43,46,.6)}
       <p class="eyebrow">ಪ್ರಕಾಶನ · ಸಮುದಾಯ · ಸಾಹಿತ್ಯ ಪತ್ರಿಕೆ</p>
       <h1>ಸಂಕಥನ</h1>
       <p class="tag">ಸೃಜನಶೀಲ ಹೊಸಪ್ರಯೋಗಗಳಿಗೆ. ವರ್ತಮಾನದ ತಲ್ಲಣಗಳ ಅಭಿವ್ಯಕ್ತಿಗೆ.</p>
-      <a class="newpill" href="#magazine">ಹೊಸದು: ಸಂಕಥನ ಇ-ಪತ್ರಿಕೆ · ಸಂಚಿಕೆ ೧ →</a>
       <p class="lede">ವಾಣಿಜ್ಯ, ವಿಜ್ಞಾನ, ತಂತ್ರಜ್ಞಾನಗಳಲ್ಲಿ ಕಲಿಯುತ್ತಿರುವ, ದುಡಿಯುತ್ತಿರುವ ಗ್ರಾಮೀಣ ಸೃಜನಶೀಲ ಯುವ ಸಮುದಾಯ. ಕಲೆ, ಸಾಹಿತ್ಯ, ಸಂಗೀತ, ಸಂಸ್ಕೃತಿ, ಪರಿಸರ, ಕೃಷಿ ಮತ್ತು ಗಾಂಧಿ – ಅಂಬೇಡ್ಕರ್ ಚಿಂತನೆಯ ಸುತ್ತ ಪುಸ್ತಕ, ಪತ್ರಿಕೆ ಮತ್ತು ಸಂವಾದ.</p>
       <ul class="facts">
         <li><b>೨೦೦೫</b><span>ಮಂಡ್ಯದಲ್ಲಿ ಶುರು</span></li>
@@ -189,6 +197,7 @@ dialog::backdrop{background:rgba(11,43,46,.6)}
       </ul>
     </div>
     <div class="doors" aria-label="ಇಲ್ಲಿಂದ ಮುಂದೆ">
+      <a class="door wide" href="#magazine"><img src="img/mag/new.jpg" alt="ಸಂಕಥನ ಇ-ಪತ್ರಿಕೆ ಸಂಚಿಕೆ ೧"><div><small>ಹೊಸದು · ೨೦೨೬</small><b>ಸಂಕಥನ ಇ-ಪತ್ರಿಕೆ</b><p>ತ್ರೈಮಾಸಿಕ · ಸಂಚಿಕೆ ೧ · ನವೆಂಬರ್ ೨೦೨೬</p><u>ಹೊಸ ಸಂಚಿಕೆ ನೋಡಿ →</u></div></a>
       <a class="door" href="#about"><small>೧</small><b>ನಾವು</b><span>ನಮ್ಮ ಕಥೆ, ನಮ್ಮ ಸಂಚಾಲಕರು</span></a>
       <a class="door" href="#programs"><small>೨</small><b>ಕಾರ್ಯಕ್ರಮ</b><span>ಪ್ರಣಾಳಿಕೆ ೨೦೨೧</span></a>
       <a class="door" href="#magazine"><small>೩</small><b>ಪತ್ರಿಕೆ</b><span>ಸಾಹಿತ್ಯ ತ್ರೈಮಾಸಿಕ</span></a>
